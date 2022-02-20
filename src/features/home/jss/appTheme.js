@@ -5,10 +5,10 @@ const createThemeMode = isNightMode =>
     palette: {
       type: isNightMode ? 'dark' : 'light',
       background: {
-        default: isNightMode ? '#242332' : '#fbf9f6',
-        paper: isNightMode ? '#606077' : '#fff',
-        primary: isNightMode ? '#505067' : '#FBF6F0',
-        secondary: isNightMode ? '#3B3A4D' : '#F8F2EC',
+        default: isNightMode ? '#120309' : '#246A73',
+        paper: isNightMode ? '#3E311A' : '#fff',
+        primary: isNightMode ? '#3E311A' : '#368F8B',
+        secondary: isNightMode ? '#3B3A4D' : '#AE8CA3',
         extra: isNightMode ? '#242332' : '#FBF6F0',
         dark: isNightMode ? '#2B2A3D' : '#999',
         paused: isNightMode ? '#2B2A5A' : '#FCE57E',
@@ -24,7 +24,7 @@ const createThemeMode = isNightMode =>
         main: isNightMode ? '#fff' : '#F8F2EC',
       },
       text: {
-        primary: isNightMode ? '#fff' : '#000',
+        primary: isNightMode ? '#fff' : '#F4EBD9',
         secondary: isNightMode ? '#B0B0DD' : '#00000066',
       },
     },

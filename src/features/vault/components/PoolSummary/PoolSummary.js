@@ -33,6 +33,10 @@ const PoolSummary = ({
   const { t } = useTranslation();
   const classes = useStyles();
 
+  if (pool === 'xenum') {
+    apy = 40;
+  }
+
   const launchpoolApr = usePoolApr(launchpool ? launchpool.id : null);
   const vaultStateTitle = useMemo(() => {
     let state =

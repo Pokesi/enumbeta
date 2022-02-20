@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import { Avatar, Box, Button } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
 
 import styles from './styles';
 import { assets, platforms } from './constants';
@@ -142,8 +142,8 @@ const Filters = ({
             }
             label={
               <Box className={classes.boost}>
-                {t('Boost')}
-                <Avatar className={classes.fire} src={require('images/stake/fire.png')} />
+                {t('Farmable 🌾')}
+                {/*}<Avatar className={classes.fire} src={require('images/stake/fire.png')} />*/}
               </Box>
             }
           />

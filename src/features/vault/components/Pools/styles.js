@@ -5,7 +5,7 @@ const styles = theme => ({
   tvl: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-end',
+    justifyContent: 'center',
   },
   title: {
     fontSize: '32px',
@@ -21,15 +21,17 @@ const styles = theme => ({
   },
   subtitle: {
     letterSpacing: '0',
-    lineHeight: '8px',
+    lineHeight: '21px',
     [theme.breakpoints.down('xs')]: {
       lineHeight: '16px',
     },
     color: theme.palette.text.secondary,
     marginTop: '0',
+    marginBottom: '16px',
   },
   text: {
     fontSize: '24px',
+    textAlign: 'center',
     letterSpacing: '0',
     lineHeight: '32px',
     fontWeight: '550',

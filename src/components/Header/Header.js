@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -13,23 +13,10 @@ import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
 import WbSunny from '@material-ui/icons/WbSunny';
 import NightsStay from '@material-ui/icons/NightsStay';
-import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
-import { Dialog, withStyles } from '@material-ui/core';
-import CustomButton from '../../components/CustomButtons/Button';
-import Transak from '../Transak/Transak';
+//import { Dialog, withStyles } from '@material-ui/core';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
-
-const StyledDialog = withStyles(theme => ({
-  paper: {
-    margin: '16px',
-    backgroundColor: theme.palette.background.primary,
-  },
-  paperScrollPaper: {
-    maxHeight: 'calc(100% - 32px)',
-  },
-}))(Dialog);
 
 const Header = ({ links, isNightMode, setNightMode }) => {
   const { chain } = useParams();
@@ -49,17 +36,17 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Button className={classes.title}>
             <Hidden xsDown>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Enum"
+                src={require(`images/enum.svg`)}
                 height={'40px'}
                 className={classes.logo}
               />
-              beefy.finance
+              Enum + Villam
             </Hidden>
             <Hidden smUp>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Enum"
+                src={require(`images/enum.svg`)}
                 height={'35px'}
                 className={classes.logo}
               />
@@ -69,16 +56,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <div className={classes.middleNav}>
           <Hidden smDown>
-            {renderLink('vote', t('vote'), 'vote-yea', classes)}
-            {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
-            {renderLink('docs', t('docs'), 'book', classes)}
-            {renderLink('blog', t('blog'), 'file-alt', classes)}
-            <InsureLink t={t} classes={classes} />
+            {renderLink('chats', t('Chats'), 'comments', classes)}
+            {renderLink('cyber', t('NFTs'), 'file-alt', classes)}
+            {renderLink('fns', t('Fantom Names'), 'book', classes)}
           </Hidden>
-          <Transak style={{ marginLeft: '5px', marginRight: '5px' }} className={classes.link}>
-            <i className={`fas fa-credit-card ${classes.icon}`} />
-            {t('buy')}
-          </Transak>
           <Link className={classes.btnBoost} to={`/${chain}/stake`}>
             <img alt="Boost" src={require('images/stake/boost.svg')} />
           </Link>
@@ -118,16 +99,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            <LinkSidebar name="vote" label={t('vote')} icon="vote-yea" classes={classes} />
-            <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
-            <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
-            <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
-            <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
-            <InsureLinkSidebar key="insure" t={t} classes={classes} />
-            <Transak style={{ width: '100%', paddingTop: '10px' }} className={classes.link}>
-              <i className={`fas fa-credit-car ${classes.icon}`} />
-              {t('buy')}
-            </Transak>
+            <LinkSidebar name="chats" label={t('Chats')} icon="comments" classes={classes} />
+            <LinkSidebar name="cyber" label={t('NFTs')} icon="file-alt" classes={classes} />
+            <LinkSidebar name="fns" label={t('Fantom Names')} icon="book" classes={classes} />
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
@@ -137,66 +111,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
     </AppBar>
   );
 };
-
-const InsureLinkSidebar = memo(function InsureLinkSidebar(props) {
-  return (
-    <div style={{ width: '100%', paddingTop: '10px' }}>
-      <InsureLink {...props} />
-    </div>
-  );
-});
-
-const InsureLink = memo(function InsureLink({ t, classes }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClose = useCallback(() => setIsOpen(false), [setIsOpen]);
-  const handleOpen = useCallback(
-    e => {
-      e.preventDefault();
-      setIsOpen(true);
-    },
-    [setIsOpen]
-  );
-
-  return (
-    <>
-      <Button
-        className={classes.link}
-        style={{ marginLeft: '5px', marginRight: '5px' }}
-        onClick={handleOpen}
-      >
-        <i className={`fas fa-shield-alt ${classes.icon}`} />
-        <span>{t('insure')}</span>
-      </Button>
-      <StyledDialog open={isOpen} onClose={handleClose} fullWidth={true} maxWidth="sm">
-        <div className={classes.modalInner}>
-          <IconButton className={classes.modalClose} onClick={handleClose}>
-            <Close />
-          </IconButton>
-          <h1 className={classes.modalTitle}>{t('InsurAce-Title')}</h1>
-          <div className={classes.modalSections}>
-            {t('InsurAce-Sections', { returnObjects: true }).map(section => (
-              <div key={section.title} className={classes.modalSection}>
-                <h2 className={classes.modalSectionTitle}>{section.title}</h2>
-                {section.content.map(paragraph => (
-                  <p key={paragraph} className={classes.modalSectionText}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-          <CustomButton
-            href="https://app.insurace.io/Insurance/Cart?id=110&chain=BSC&referrer=95244279533280151623141934507761661103282646845"
-            target="_blank"
-            className={classes.modalButton}
-          >
-            {t('InsurAce-Button')}
-          </CustomButton>
-        </div>
-      </StyledDialog>
-    </>
-  );
-});
 
 const renderLink = (name, label, icon, classes) => {
   return (
@@ -218,7 +132,14 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.beefy.finance`;
+  if (name === 'chats') {
+    return `https://chats.fantoms.art`;
+  } else if (name === 'cyber') {
+    return `https://cyber.fantoms.art`;
+  } else if (name === 'fns') {
+    return `https://fns.fantoms.art`;
+  }
+  return `https://fantoms.art/`;
 };
 
 export default Header;

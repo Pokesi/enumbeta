@@ -47,8 +47,6 @@
   "Vault-UpdateError": "Update error: {{error}}",
   "Vault-UpdateInfo": "Updating a pool helps compound the tokens.",
   "Vault-UpdateMoreInfo": "Update will result in tokens being claimed and sold for the {{poolToken}}",
-  "Vault-Updating": "Updating...",
-  "Vault-UpdateButton": "Update!",
   "Vault-WithdrawScenario": "Withdrawal will result in:",
   "Vault-WithdrawScenarioRedeem": "Redeem {{mooToken}} token for {{poolToken}}",
   "Vault-WithdrawScenarioRemoveLiquidity": "Remove liquidity from {{poolToken}} to receive {{tokenA}} and {{tokenB}}",

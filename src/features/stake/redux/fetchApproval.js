@@ -9,6 +9,7 @@ import {
 import { enqueueSnackbar } from '../../common/redux/actions';
 import { updatePools } from './subscription';
 import { launchpools } from '../../helpers/getNetworkData';
+import { ADDRESS } from './enumChefData.js';
 
 const UNLIMITED_APPROVAL = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
 
@@ -29,11 +30,11 @@ export function fetchApproval(id) {
       // args.error here is only for test coverage purpose.
       const { home } = getState();
       const { address, web3 } = home;
-      const { tokenAddress, earnContractAddress } = launchpools[id];
+      const { tokenAddress } = launchpools[id];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
 
       contract.methods
-        .approve(earnContractAddress, UNLIMITED_APPROVAL)
+        .approve(ADDRESS, UNLIMITED_APPROVAL)
         .send({ from: address })
         .on('transactionHash', function (hash) {
           dispatch(

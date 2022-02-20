@@ -8,6 +8,7 @@ import {
 import { enqueueSnackbar } from '../../common/redux/actions';
 import { launchpools } from '../../helpers/getNetworkData';
 import { updatePools } from './subscription';
+import { ABI, ADDRESS } from './enumChefData.js';
 
 export function fetchWithdraw(id, amount) {
   return (dispatch, getState) => {
@@ -26,11 +27,10 @@ export function fetchWithdraw(id, amount) {
       // args.error here is only for test coverage purpose.
       const { home } = getState();
       const { address, web3 } = home;
-      const { earnContractAbi, earnContractAddress } = launchpools[id];
-      const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
+      const contract = new web3.eth.Contract(ABI, ADDRESS);
 
       contract.methods
-        .withdraw(amount)
+        .withdraw(id, amount)
         .send({ from: address })
         .on('transactionHash', function (hash) {
           dispatch(

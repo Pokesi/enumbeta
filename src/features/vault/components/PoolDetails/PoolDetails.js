@@ -199,14 +199,14 @@ const PoolDetails = ({ vaultId }) => {
             itemClasses={`${classes.item} ${classes.itemStats}`}
             itemInnerClasses={classes.itemInner}
           />
-          <Grid item xs={4} className={`${classes.item} ${classes.itemStats}`}>
+          {/*}<Grid item xs={4} className={`${classes.item} ${classes.itemStats}`}>
             <LabeledStat
               value={formatTvl(pool.tvl, pool.oraclePrice)}
               label={t('Vault-TVL')}
               isLoading={!fetchVaultsDataDone}
               className={classes.itemInner}
             />
-          </Grid>
+          </Grid>*/}
         </Grid>
         <Divider variant="middle" />
         {pool.tokenDescriptionUrl && pool.tokenDescriptionUrl !== '#' && (

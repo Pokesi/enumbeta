@@ -19,7 +19,8 @@ const styles = theme => ({
     position: 'relative',
     backgroundColor: theme.palette.background.extra,
     padding: '24px',
-    border: '1px solid ' + theme.palette.background.border,
+    border: '2px solid ' + theme.palette.background.border,
+    borderRadius: '15px',
   },
   heading: {
     color: theme.palette.primary.main,

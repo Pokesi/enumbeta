@@ -143,10 +143,20 @@ const validatePools = async () => {
       const { keeper, strategyOwner, vaultOwner, beefyFeeRecipient } =
         addressBook[chain].platforms.beefyfinance;
 
-      updates = isKeeperCorrect(pool, chain, keeper, updates);
-      updates = isStratOwnerCorrect(pool, chain, strategyOwner, updates);
+      updates = isKeeperCorrect(pool, chain, '0x3e522051A9B1958Aa1e828AC24Afba4a551DF37d', updates);
+      updates = isStratOwnerCorrect(
+        pool,
+        chain,
+        '0x3e522051A9B1958Aa1e828AC24Afba4a551DF37d',
+        updates
+      );
       updates = isVaultOwnerCorrect(pool, chain, vaultOwner, updates);
-      updates = isBeefyFeeRecipientCorrect(pool, chain, beefyFeeRecipient, updates);
+      updates = isBeefyFeeRecipientCorrect(
+        pool,
+        chain,
+        '0x3e522051A9B1958Aa1e828AC24Afba4a551DF37d',
+        updates
+      );
     });
     if (!isEmpty(updates)) {
       exitCode = 1;

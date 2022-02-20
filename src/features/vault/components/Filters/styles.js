@@ -2,14 +2,16 @@ const styles = theme => ({
   container: {
     padding: '24px',
     margin: '8px 0 2rem',
-    border: '1px solid ' + theme.palette.background.border,
+    border: '2px solid ' + theme.palette.background.border,
     backgroundColor: theme.palette.background.primary,
     justifyContent: 'space-between',
     position: 'relative',
+    borderRadius: '7.5px',
   },
 
   selectorContainer: {
     width: '100%',
+    borderRadius: '15px',
   },
 
   selectorLabel: {
@@ -29,7 +31,7 @@ const styles = theme => ({
     },
   },
   boost: {
-    color: '#5a8f69',
+    color: '#1a9467',
     fontWeight: 'bold',
     '& .MuiAvatar-root': {
       position: 'absolute',
@@ -41,8 +43,9 @@ const styles = theme => ({
     border: '1px solid ' + theme.palette.background.border,
     padding: '4px 8px',
     position: 'absolute',
-    top: '5px',
-    right: '5px',
+    top: '7.5px',
+    right: '7.5px',
+    borderRadius: '15px',
     backgroundColor: theme.palette.background.default,
     '& .MuiButton-label': {
       fontWeight: 'bold',

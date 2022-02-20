@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 export const allNetworks = [
-  {
+  /*{
     name: 'BSC',
     asset: 'BSC',
     id: 56,
@@ -23,13 +23,13 @@ export const allNetworks = [
     asset: 'POLYGON',
     id: 137,
     hash: '/polygon',
-  },
+  },*/
   {
     name: 'FANTOM',
     asset: 'FANTOM',
     id: 250,
-    hash: '/fantom',
-  },
+    hash: '/app',
+  } /*
   {
     name: 'HARMONY',
     asset: 'HARMONY',
@@ -83,7 +83,7 @@ export const allNetworks = [
     asset: 'MOONBEAM',
     id: 1284,
     hash: '/moonbeam',
-  },
+  },*/,
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

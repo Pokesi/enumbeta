@@ -8,6 +8,8 @@ import {
 import { enqueueSnackbar } from '../../common/redux/actions';
 import { launchpools } from '../../helpers/getNetworkData';
 import { updatePools } from './subscription';
+import { ABI, ADDRESS } from './enumChefData.js';
+import { ethers } from 'ethers';
 
 export function fetchExit(id) {
   return (dispatch, getState) => {
@@ -26,11 +28,13 @@ export function fetchExit(id) {
       // args.error here is only for test coverage purpose.
       const { home } = getState();
       const { address, web3 } = home;
-      const { earnContractAbi, earnContractAddress } = launchpools[id];
-      const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
+      const contract = new web3.eth.Contract(ABI, ADDRESS);
+      const ethersProvider = new ethers.JsonRpcProvider('https://rpc.ftm.tools');
+      const ethersContract = new ethers.Contract(ABI, ADDRESS, ethersProvider);
+      //const userBalance = ethersContract.functions.getPoolBalance(id, address);
 
       contract.methods
-        .exit()
+        .withdraw(id)
         .send({ from: address })
         .on('transactionHash', function (hash) {
           dispatch(

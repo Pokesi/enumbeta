@@ -1,4 +1,5 @@
 export { fetchBalances } from './fetchBalances';
+export { fetchUpdate } from './fetchUpdate';
 export { fetchVaultsData } from './fetchVaultsData';
 export { fetchApproval } from './fetchApproval';
 export { fetchDeposit } from './fetchDeposit';
