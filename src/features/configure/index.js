@@ -17,7 +17,7 @@ var {
   moonbeam: moonbeamAddressBook,
 } = addressBook;
 
-fantomAddressBook = {...fantomAddressBook, DMD: { address: "0x90E892FED501ae00596448aECF998C88816e5C0F", chainId: 250, deciamls: 18, description: "Dark Matter DeFi (DMD) was created with the vision to bring NFT staking with a storyline to the world of DeFi farming.", logoUri: "https://www.darkmatterdefi.com/images/tokens/0x90e892fed501ae00596448aecf998c88816e5c0f.svg", name: "DarkMatter Defi", website: "https://www.darkmatterdefi.com/" } };
+fantomAddressBook[tokens] = {...fantomAddressBook[tokens], DMD: { address: "0x90E892FED501ae00596448aECF998C88816e5C0F", chainId: 250, deciamls: 18, description: "Dark Matter DeFi (DMD) was created with the vision to bring NFT staking with a storyline to the world of DeFi farming.", logoUri: "https://www.darkmatterdefi.com/images/tokens/0x90e892fed501ae00596448aecf998c88816e5c0f.svg", name: "DarkMatter Defi", website: "https://www.darkmatterdefi.com/" } };
 
 export {
   bscAddressBook,
