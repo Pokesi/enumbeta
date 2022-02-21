@@ -33,7 +33,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },*/
   {
-    id: 'spirit-ftm-dai',
+    id: 'spirit-dai-usdc-v2',
     name: 'DAI-USDC SpiritSwap LP',
     token: 'DAI-USDC SLP',
     tokenDescription: 'SpiritSwap - No boost',
@@ -47,7 +47,7 @@ export const fantomPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'spirit-ftm-dai',
+    oracleId: 'spirit-dai-usdc-v2',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -70,7 +70,7 @@ export const fantomPools = [
   },
 
   {
-    id: 'boo-boo-ftm',
+    id: 'boo-ftm-boo-v2',
     name: 'FTM-BOO SpookySwap LP',
     token: 'FTM-BOO SLP',
     tokenDescription: 'SpookySwap',
@@ -84,7 +84,7 @@ export const fantomPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'boo-boo-ftm',
+    oracleId: 'boo-ftm-boo-v2',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -107,7 +107,7 @@ export const fantomPools = [
   },
   
   {
-    id: 'dmd-dmd-ftm',
+    id: 'dmd-dmd-ftm-v2',
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
     tokenDescription: 'Dark Matter',
@@ -120,7 +120,7 @@ export const fantomPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'dmd-dmd-ftm',
+    oracleId: 'dmd-dmd-ftm-v2',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
