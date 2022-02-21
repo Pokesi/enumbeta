@@ -107,7 +107,7 @@ export const fantomPools = [
   },
   
   {
-    id: 'dmd-dmd-ftm',
+    id: 'boo-boo-ftm',
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
     tokenDescription: 'Dark Matter',
