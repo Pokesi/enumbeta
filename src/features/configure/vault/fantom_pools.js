@@ -107,7 +107,7 @@ export const fantomPools = [
   },
   
   {
-    id: 'dmd-dmd-ftm-v3',
+    id: 'dmd-dmd-ftm-v2',
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
     tokenDescription: 'Dark Matter',
@@ -120,7 +120,7 @@ export const fantomPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'dmd-dmd-ftm-v3',
+    oracleId: 'dmd-dmd-ftm-v2',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
