@@ -35,6 +35,7 @@ export function fetchApys() {
 					data: res.data,
 				});
 				resolve(res);
+			},
 			err => {
 				dispatch({
 					type: VAULT_FETCH_APYS_FAILURE,
