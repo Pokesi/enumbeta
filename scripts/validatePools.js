@@ -124,6 +124,7 @@ const validatePools = async () => {
         activePools++;
       }
 
+      /*
       if (new BigNumber(pool.totalSupply).isZero()) {
         if (pool.status !== 'eol') {
           console.error(`Error: ${pool.id} : Pool is empty`);
@@ -133,7 +134,7 @@ const validatePools = async () => {
         } else {
           console.warn(`${pool.id} : eol pool is empty`);
         }
-      }
+      }*/
 
       uniquePoolId.add(pool.id);
       uniqueEarnedToken.add(pool.earnedToken);
