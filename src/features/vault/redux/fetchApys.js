@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
 } from './constants';
-import { apiUrl, getApiCacheBuster } from '../../helpers/getApiInfo';
+import { apiUrl, backUpUrl, getApiCacheBuster } from '../../helpers/getApiInfo';
 
 export function fetchApys() {
   return dispatch => {
@@ -27,11 +27,22 @@ export function fetchApys() {
           resolve(res);
         },
         err => {
-          dispatch({
-            type: VAULT_FETCH_APYS_FAILURE,
-            data: { error: err },
-          });
-          reject(err);
+		  const doRequest2 = axios.get(`${backUpUrl}/apy/breakdown?_=${cacheBuster}`);
+		  doRequest2.then(
+			res => {
+				dispatch({
+					type: VAULT_FETCH_APYS_SUCCESS,
+					data: res.data,
+				});
+				resolve(res);
+			err => {
+				dispatch({
+					type: VAULT_FETCH_APYS_FAILURE,
+					data: { error: err },
+				});
+				reject(err);
+			}
+		  )
         }
       );
     });
