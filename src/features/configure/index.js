@@ -1,6 +1,6 @@
 import { addressBook } from 'blockchain-addressbook';
 
-const {
+var {
   polygon: polygonAddressBook,
   heco: hecoAddressBook,
   celo: celoAddressBook,
