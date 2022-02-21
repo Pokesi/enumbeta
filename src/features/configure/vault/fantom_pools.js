@@ -101,9 +101,9 @@ export const fantomPools = [
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
-      'https://swap.spiritswap.finance/#/add/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
+      'https://swap.spookyswap.finance/#/add/FTM/BOO',
     buyTokenUrl:
-      'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
+      'https://swap.spookyswap.finance/#/exchange/swap/FTM/BOO',
   },
   
   {
@@ -111,17 +111,17 @@ export const fantomPools = [
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
     tokenDescription: 'Dark Matter',
-    tokenAddress: '0x0',
+    tokenAddress: '0xf10f0eeb144eb223dd8ae7d5dd7f3327e63a3c94',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'enumV1-FTM-DMD',
-    earnedTokenAddress: '0x0',
-    earnContractAddress: '0x0',
+    earnedTokenAddress: '0xbe6ef479711f211de87019c77970769a081861bf',
+    earnContractAddress: '0xbe6ef479711f211de87019c77970769a081861bf',
     strategy: '0x0',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'boo-boo-ftm',
+    oracleId: 'dmd-dmd-ftm',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
