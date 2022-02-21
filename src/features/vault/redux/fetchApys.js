@@ -20,6 +20,7 @@ export function fetchApys() {
 
       doRequest.then(
         res => {
+	  console.log("api.beefy.finance succeeded");
           dispatch({
             type: VAULT_FETCH_APYS_SUCCESS,
             data: res.data,
@@ -28,6 +29,7 @@ export function fetchApys() {
         },
         err => {
 		  const doRequest2 = axios.get(`${backUpUrl}/apy/breakdown?_=${cacheBuster}`);
+		  console.log("api.grim.finance succeeded");
 		  doRequest2.then(
 			res => {
 				dispatch({
@@ -37,6 +39,7 @@ export function fetchApys() {
 				resolve(res);
 			},
 			err => {
+				console.log("fail");
 				dispatch({
 					type: VAULT_FETCH_APYS_FAILURE,
 					data: { error: err },
