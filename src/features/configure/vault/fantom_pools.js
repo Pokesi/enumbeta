@@ -106,7 +106,7 @@ export const fantomPools = [
       'https://swap.spookyswap.finance/#/exchange/swap/FTM/BOO',
   },
   
-  {
+/*{
     id: 'dmd-dmd-ftm',
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
@@ -140,5 +140,5 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/add/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
-  },
+  },*/
 ];
