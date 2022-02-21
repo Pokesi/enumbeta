@@ -107,7 +107,7 @@ export const fantomPools = [
   },
   
   {
-    id: 'boo-boo-ftm',
+    id: 'dmd-dmd-ftm',
     name: 'FTM-DMD Dark Matter LP',
     token: 'FTM-DMD DM',
     tokenDescription: 'Dark Matter',
@@ -117,7 +117,6 @@ export const fantomPools = [
     earnedToken: 'enumV1-FTM-DMD',
     earnedTokenAddress: '0xEa91a693c8AE6326C67bF8Cafb9EA65aBc676AdD',
     earnContractAddress: '0xEa91a693c8AE6326C67bF8Cafb9EA65aBc676AdD',
-    strategy: '0x0',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -125,7 +124,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SpookySwap',
+    platform: 'DarkMatterDefi',
     assets: ['FTM', 'DMD'],
     risks: [
       'COMPLEXITY_LOW',
