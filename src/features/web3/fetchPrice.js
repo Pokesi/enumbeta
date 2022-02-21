@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { getNetworkPools, launchpools } from '../helpers/getNetworkData';
-import { apiUrl, getApiCacheBuster } from '../helpers/getApiInfo';
+import { apiUrl, backUpUrl, getApiCacheBuster } from '../helpers/getApiInfo';
 
 const pools = getNetworkPools();
 
@@ -33,8 +33,13 @@ const fetchTokens = async () => {
     const response = await axios.get(`${apiUrl}/prices?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
-    console.error(err);
-    return {};
+    try {
+	  const response2 = await axios.get(`${apiUrl}/prices?_=${cacheBuster}`);
+      return response2.data;
+	} catch (err2) {
+      console.error(err + ":" + err2);
+      return {};
+	}
   }
 };
 
@@ -45,8 +50,13 @@ const fetchLPs = async () => {
     const response = await axios.get(`${apiUrl}/lps?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
-    console.error(err);
-    return {};
+	try {
+	  const response2 = await axios.get(`${apiUrl}/lps?_=${cacheBuster}`);
+      return response2.data;
+	} catch (err2) {
+      console.error(err + ":" + err2);
+      return {};
+	}
   }
 };
 
