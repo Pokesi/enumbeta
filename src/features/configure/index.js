@@ -33,6 +33,8 @@ export {
   moonbeamAddressBook,
 };
 
+console.log(fantomAddressBook);
+
 export {
   vaultABI,
   bnbVaultABI,
