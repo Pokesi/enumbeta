@@ -1,4 +1,4 @@
-export const apiUrl = 'https://api.beefy.finance';
+export const apiUrl = 'https://api.grim.finance';
 export const backUpUrl = 'https://api.grim.finance';
 // Time-based cache buster
 export const getApiCacheBuster = () => {
