@@ -105,4 +105,41 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
   },
+  
+  {
+    id: 'dmd-dmd-ftm',
+    name: 'FTM-DMD Dark Matter LP',
+    token: 'FTM-DMD DM',
+    tokenDescription: 'Dark Matter',
+    tokenAddress: '0x0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'enumV1-FTM-DMD',
+    earnedTokenAddress: '0x0',
+    earnContractAddress: '0x0',
+    strategy: '0x0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'boo-boo-ftm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SpookySwap',
+    assets: ['FTM', 'DMD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://swap.spiritswap.finance/#/add/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
+    buyTokenUrl:
+      'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
+  },
 ];
