@@ -1,4 +1,4 @@
-export const ADDRESS = '0xd285A4b12C356E8CD99Eb0985740DF9C63eb1d75';
+export const ADDRESS = '0x6A403FFbBF8545EE0d99a63A72e5f335dFCaE2Bd';
 export const ABI = [
   {
     inputs: [],
